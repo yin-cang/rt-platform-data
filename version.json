@@ -1,33 +1,29 @@
-﻿{
-    "app_download_url":  "https://gitee.com/tiaotiaohugogo/rt-platform-data/releases/v1.1.1",
-    "downloads":  [
-                      {
-                          "url":  "https://gitee.com/tiaotiaohugogo/rt-platform-data/releases/download/v1.1.1/rt.exe",
-                          "arch":  "amd64",
-                          "os":  "windows"
-                      }
-                  ],
-    "app_version":  "1.1.1",
-    "poc_version":  "2026.10.27",
-    "poc_manifest_url":  "https://gitee.com/tiaotiaohugogo/rt-platform-data/raw/master/poc-manifest.json",
-    "released_at":  "2026-10-27T15:32:00+08:00",
-    "changelog":  {
-                      "fixed":  [
-                                    "🐛 单模块 portscan 极速/标准模式卡片点击无响应: portscanFastMode 未暴露在 Vue return 对象中导致模板引用 undefined",
-                                    "🐛 DAG CollectStepProducts 三 Bug: CMS 逗号串未 split、FingerprintRepo.List 硬编码 50 导致大任务指纹丢失、Products JSON 字段未解析",
-                                    "🐛 ListPocs API 默认 matched=true 过滤掉未命中记录导致 POC 轨迹面板空白",
-                                    "🛡️ Products JSON 前置守卫: 历史 Fingerprint 记录 products 字段为 null/[]/非法 JSON 时安全跳过"
-                                ],
-                      "added":  [
-                                    "🌐 应用配置页「随机 UA 池」: 16 个主流浏览器 UA 随机池 + chips 卡片化编辑 + 单个删除 + 一键恢复默认池",
-                                    "🔄 随机 UA 热生效: 修改池内容后点保存无需重启服务",
-                                    "🔍 单模块 POC 触发链路 Debug: 百度-UEditor/IIS/jQuery 等产品指纹→POC 完整链路验证通过"
-                                ],
-                      "optimized":  [
-                                        "🎨 UA 池 UI 精致化: 类型 Chips 着色 (Chrome🟦/Firefox🟧/Safari🍎/Mobile📱/Bot🤖) + 统计条 + 单行简洁添加",
-                                        "🗑️ 删除 UA 池下方突兀 textarea 改为单行输入框 + 回车添加",
-                                        "🔒 后端 PickUA() 三层兜底: 随机池→用户配置→硬编码 Chrome 131 永不为空"
-                                    ]
-                  },
-    "poc_base_url":  "https://gitee.com/tiaotiaohugogo/rt-platform-data/raw/master/pocs/"
+{
+  "app_version": "1.1.1",
+  "app_download_url": "https://gitee.com/tiaotiaohugogo/rt-platform-data/releases/v1.1.1",
+  "downloads": [
+    { "os": "windows", "arch": "amd64", "url": "https://gitee.com/tiaotiaohugogo/rt-platform-data/releases/download/v1.1.1/rt-v1.1.1-windows-amd64.zip" },
+    { "os": "windows", "arch": "arm64", "url": "https://gitee.com/tiaotiaohugogo/rt-platform-data/releases/download/v1.1.1/rt-v1.1.1-windows-arm64.zip" },
+    { "os": "linux", "arch": "amd64", "url": "https://gitee.com/tiaotiaohugogo/rt-platform-data/releases/download/v1.1.1/rt-v1.1.1-linux-amd64.zip" },
+    { "os": "linux", "arch": "arm64", "url": "https://gitee.com/tiaotiaohugogo/rt-platform-data/releases/download/v1.1.1/rt-v1.1.1-linux-arm64.zip" },
+    { "os": "darwin", "arch": "amd64", "url": "https://gitee.com/tiaotiaohugogo/rt-platform-data/releases/download/v1.1.1/rt-v1.1.1-darwin-amd64.zip" },
+    { "os": "darwin", "arch": "arm64", "url": "https://gitee.com/tiaotiaohugogo/rt-platform-data/releases/download/v1.1.1/rt-v1.1.1-darwin-arm64.zip" }
+  ],
+  "poc_version": "2026.10.05",
+  "poc_manifest_url": "https://gitee.com/tiaotiaohugogo/rt-platform-data/raw/master/poc-manifest.json",
+  "poc_base_url": "https://gitee.com/tiaotiaohugogo/rt-platform-data/raw/master/pocs/",
+  "webfinger_version": "2026.08.25",
+  "webfinger_download_url": "https://gitee.com/tiaotiaohugogo/rt-platform-data/raw/master/webfinger.zip",
+  "released_at": "2026-10-09T12:00:00+08:00",
+  "changelog": {
+    "added": [],
+    "fixed": [
+      "修复任务详情扫描结果被截断（2000条限制）导致 JSFinder/目录扫描等结果不完整的问题",
+      "修复前端筛选基于当前页数据而非全量数据的问题，改为服务端筛选"
+    ],
+    "optimized": [
+      "任务详情资产列表改为服务端分页+筛选，避免一次性加载上万条数据导致内存爆满",
+      "端口/指纹/POC/JS/目录/子域名 6 类资产 API 均支持分页与多值筛选"
+    ]
+  }
 }
